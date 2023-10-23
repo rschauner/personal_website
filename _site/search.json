@@ -1,7 +1,7 @@
 [
   {
-    "objectID": "pages/cv/cv.html",
-    "href": "pages/cv/cv.html",
+    "objectID": "pages/cv/index.html",
+    "href": "pages/cv/index.html",
     "title": "Curriculum vitae",
     "section": "",
     "text": "Download current CV"
@@ -21,46 +21,11 @@
     "text": "Code on GitHub\nA project focused on implicating the Hexoseamine Biosynthetic Pathway and O-GlcNAcylation in AML.\nPublication Pending"
   },
   {
-    "objectID": "pages/Projects/index.html#the-languages-of-middle-earth",
-    "href": "pages/Projects/index.html#the-languages-of-middle-earth",
-    "title": "Projects",
-    "section": "",
-    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
-  },
-  {
-    "objectID": "pages/Projects/index.html#aml",
-    "href": "pages/Projects/index.html#aml",
-    "title": "Projects",
-    "section": "",
-    "text": "Code"
-  },
-  {
-    "objectID": "pages/Projects/index.html#code",
-    "href": "pages/Projects/index.html#code",
-    "title": "Projects",
-    "section": "Code",
-    "text": "Code"
-  },
-  {
     "objectID": "pages/Projects/index.html#o-glcnacylation-in-aml",
     "href": "pages/Projects/index.html#o-glcnacylation-in-aml",
     "title": "Projects",
     "section": "",
     "text": "Code on GitHub\nA project focused on implicating the Hexoseamine Biosynthetic Pathway and O-GlcNAcylation in AML.\nPublication Pending"
-  },
-  {
-    "objectID": "pages/Projects/index.html#a-project-focused-on-implicating-the-hexoseamine-biosynthetic-pathway-and-o-glcnacylation-in-aml.",
-    "href": "pages/Projects/index.html#a-project-focused-on-implicating-the-hexoseamine-biosynthetic-pathway-and-o-glcnacylation-in-aml.",
-    "title": "Projects",
-    "section": "A project focused on implicating the Hexoseamine Biosynthetic Pathway and O-GlcNAcylation in AML.",
-    "text": "A project focused on implicating the Hexoseamine Biosynthetic Pathway and O-GlcNAcylation in AML."
-  },
-  {
-    "objectID": "pages/Projects/index.html#sorting-students-into-groups",
-    "href": "pages/Projects/index.html#sorting-students-into-groups",
-    "title": "Projects",
-    "section": "Sorting Students into Groups",
-    "text": "Sorting Students into Groups\nCode on GitHub\nA simple project to make a GUI to sort students into groups using Rust. The purpose was: - I wanted for someone to be able to run this without having R or Python installed, - I wanted to learn a little bit of a compiled language, - My fianceé had a use for such a utility."
   },
   {
     "objectID": "pages/Projects/index.html#sorting-students-into-random-groups",
