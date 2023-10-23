@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: "3d1446c8-0d5f-4605-a6aa-0c8944cbd8b5"
+      url: "https://gentle-fairy-44e7f1.netlify.app"
