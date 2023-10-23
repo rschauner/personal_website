@@ -1,0 +1,14 @@
+{
+  "hash": "bb0b7e7d3dd18dc0cbe7da4be41c91d7",
+  "result": {
+    "markdown": "---\nlayout: page\ntitle: Projects\nexcerpt: Current and Past Projects\nengine: knitr\n---\n\n\n\n## *O*-GlcNAcylation in AML\n\n[//]: # (TODO: Fix Broken Link and Image)\n[//]: # (<img src=\"project_1_banner.png\" style=\"height: 100%; width: 100%; object-fit: contain\" onclick=\"window.open&#40;'https://arxiv.org/abs/2210.07278', 'blank'&#41;;\"/>)\n\n<a href=\"https://github.com/rschauner/2022-frontiers-immunology-aml-hbp\" target=\"_blank\">Code on GitHub</a><br>\n\nA project focused on implicating the Hexoseamine Biosynthetic Pathway and *O*-GlcNAcylation in AML.\n\n*Publication Pending*\n\n----\n\n## Sorting Students into Random Groups\n\n<a href=\"https://github.com/rschauner/student-pairs\" target=\"_blank\">Code on GitHub</a><br>\n\nA simple project to make a CLI and GUI to sort students into groups using Rust.\nThe purpose was:\n\n- I wanted for someone to be able to run this without having R or Python installed,\n\n- I wanted to learn a little bit of a compiled language, and\n\n- My fianceé had a use for such a utility.\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

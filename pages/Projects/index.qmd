@@ -1,0 +1,35 @@
+---
+layout: page
+title: Projects
+excerpt: Current and Past Projects
+engine: knitr
+---
+
+
+## *O*-GlcNAcylation in AML
+
+[//]: # (TODO: Fix Broken Link and Image)
+[//]: # (<img src="project_1_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open&#40;'https://arxiv.org/abs/2210.07278', 'blank'&#41;;"/>)
+
+<a href="https://github.com/rschauner/2022-frontiers-immunology-aml-hbp" target="_blank">Code on GitHub</a><br>
+
+A project focused on implicating the Hexoseamine Biosynthetic Pathway and *O*-GlcNAcylation in AML.
+
+*Publication Pending*
+
+----
+
+## Sorting Students into Random Groups
+
+<a href="https://github.com/rschauner/student-pairs" target="_blank">Code on GitHub</a><br>
+
+A simple project to make a CLI and GUI to sort students into groups using Rust.
+The purpose was:
+
+- I wanted for someone to be able to run this without having R or Python installed,
+
+- I wanted to learn a little bit of a compiled language, and
+
+- My fianceé had a use for such a utility.
+
+

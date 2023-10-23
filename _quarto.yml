@@ -1,0 +1,39 @@
+project:
+  type: website
+  resources:
+    - "assets/**"
+
+website:
+  title: "Robert Schauner"
+
+  navbar:
+    pinned: true
+
+    # your sub-pages
+    left:
+      - text: ""
+        href: pages/Projects/index.qmd
+      - text: "CV"
+        href: pages/cv/index.qmd
+
+
+    # your social media handles
+    right:
+      - icon: github
+        href: https://github.com/rschauner
+      - icon: linkedin
+        href: https://www.linkedin.com/in/robert-schauner/
+      - icon: envelope
+        aria-label: email
+        href: "mailto:rschauner@fastmail.com"
+
+format:
+  html:
+    theme:
+     - united
+     - styles/styles.scss
+
+    toc: false
+
+
+
