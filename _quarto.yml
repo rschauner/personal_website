@@ -8,9 +8,13 @@ execute:
 
 website:
   title: "Robert Schauner"
+  twitter-card: true
+  open-graph: true
+  search: false
 
   navbar:
     pinned: true
+    background: navbar_bg
 
     # your sub-pages
     left:
@@ -19,13 +23,14 @@ website:
       - text: "CV"
         href: pages/cv/index.qmd
 
-
     # your social media handles
     right:
       - icon: github
         href: https://github.com/rschauner
       - icon: linkedin
         href: https://www.linkedin.com/in/robert-schauner/
+      - text: ORCiD
+        href: https://orcid.org/0000-0002-6336-7331
       - icon: envelope
         aria-label: email
         href: "mailto:rschauner@fastmail.com"
@@ -37,6 +42,3 @@ format:
      - styles/styles.scss
 
     toc: false
-
-
-

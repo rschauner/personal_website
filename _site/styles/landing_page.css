@@ -1,15 +1,17 @@
 :root {
-
     --gradient-text: var(--color-primary);
     --gradient-bar: linear-gradient(103.22deg, #c7c7c7 -13.86%, #ff7a48 99.55%);
 
-    --color-primary: #E6AA04;
-    --color-bg: #fff;
+    --color-primary: #C33C54;
+    --color-secondary: #91C7B1;
+    --color-bg: #F1F7ED;
     --color-bg-1: #b3a69f;
     --color-bg-2: #d8f2ea;
-    --color-text: #fff;
+    --color-text: #420039;
     --color-subtext: #FF8A71;
 }
+
+
 
 * {
     box-sizing: border-box;
@@ -26,8 +28,8 @@ body{
   overflow: visible;
   width: 100%;
   margin-top: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0, 57, 138, 1) 100%);
-  /*background: linear-gradient(90deg, rgba(0, 97, 242, 1) 0%, rgba(105, 0, 199, 1) 100%);*/
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-secondary) 100%);
+
 }
 
 h1 {
@@ -38,22 +40,6 @@ a {
     color: unset;
     text-decoration: none;
 }
-
-/*.gradient_bg {*/
-/*    background:-moz-radial-gradient(circle at 3% 25%, var(--color-bg-1) 0%, var(--color-bg-2) 25%);*/
-
-/*    !* safari 5.1+,chrome 10+ *!*/
-/*    background:-webkit-radial-gradient(circle at 3% 25%, var(--color-bg-1) 0%, var(--color-bg-2) 25%);*/
-
-/*    !* opera 11.10+ *!*/
-/*    background:-o-radial-gradient(circle at 3% 25%, var(--color-bg-1) 0%, var(--color-bg-2) 25%);*/
-
-/*    !* ie 10+ *!*/
-/*    background:-ms-radial-gradient(circle at 3% 25%, var(--color-bg-1) 0%, var(--color-bg-2) 25%);*/
-
-/*    !* global 92%+ browsers support *!*/
-/*    background:radial-gradient(circle at 3% 25%, var(--color-bg-1) 0%, var(--color-bg-2) 25%);*/
-/*}*/
 
 .gradient_text {
     background: var(--gradient-text);
@@ -151,6 +137,7 @@ a {
     font-size: 62px;
     line-height: 75px;
     letter-spacing: -0.04em;
+    color: var(--color-text);
 }
 
 .hero_content p {
@@ -158,8 +145,11 @@ a {
     font-size: 20px;
     line-height: 28px;
     color: var(--color-text);
-
     margin-top: 1.5rem;
+}
+
+.hero_content li {
+    color: var(--color-text);
 }
 
 .hero_content_input {

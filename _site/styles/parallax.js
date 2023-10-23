@@ -12,7 +12,7 @@ for (i = 0; i < 101; i++){
     'bottom': y_location,
     'left': x_location,
     'position': 'absolute',
-    'background-color': '#fff2b5',
+    'background-color': '#D58936',
     'height': size,
     'width': size,
     'opacity' : opacity

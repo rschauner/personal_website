@@ -27,8 +27,13 @@ $green:   #118230 !default;
 $teal:    #20c997 !default;
 $cyan:    #3093CF !default;
 
-$primary:   $orange!default;
-$secondary: $gray-700 !default;
+/* $primary:   $orange!default; */
+$primary:   #C33C54 !default;
+$secondary: #F1F7ED !default;
+$tertiary:   #91C7B1 !default;
+$emphasis:   #420039 !default;
+$light-emphasis:   #D58936 !default;
+
 $success:   $green !default;
 $info:      $cyan !default;
 $warning:   $orange !default;
@@ -36,12 +41,13 @@ $danger:    $red !default;
 $light:     $gray-400 !default;
 $dark:      $black !default;
 
+$navbar_bg: $secondary !default;
 
 
 // Links
-$link-color: $orange !default;
+$link-color: $tertiary !default;
 $link-decoration: none !default;
-$link-hover-color: $red !default;
+$link-hover-color: $primary !default;
 $link-hover-decoration: underline !default;
 
 // Footer
@@ -53,11 +59,11 @@ $code-bg: $gray-200 !default;
 $code-color: $gray-900 !default;
 
 // TOC
-$toc-color: $orange;
+$toc-color: $primary;
 $toc-font-size: 1em;
 
 // Code copy
-$btn-code-copy-color-active: $orange !default;
+$btn-code-copy-color-active: $primary !default;
 
 
 /*-- scss:rules --*/
@@ -82,8 +88,6 @@ pre.text, pre.sourceCode, .cell-output pre {
 
 .navbar {
   z-index: 0;
-  background: black;
-  /*background: linear-gradient(90deg, rgba(0, 97, 242, 1) 0%, rgba(105, 0, 199, 1) 100%);*/
 }
 
 .fixed-top {
@@ -92,16 +96,17 @@ pre.text, pre.sourceCode, .cell-output pre {
 
 .navbar-dark .navbar-nav .nav-link {
   z-index:0;
-  color: #fff;
+  color: $tertiary;
 }
 
 .navbar-dark:hover .navbar-nav:hover .nav-link:hover{
   z-index: 0;
-  color: $orange;
+  color: $emphasis;
 }
 
+
 .navbar-title {
-  color: #fff;
+  color: $tertiary;
   z-index: 10;
 }
 
@@ -110,73 +115,6 @@ pre.text, pre.sourceCode, .cell-output pre {
                 object-fit: contain;
         }
 
-// Blog
-.blog {
-    .blog-entry {
-        display: flex;
-        flex-direction: row;
-        //font-family: $headings-font-family;
-        line-height: 1.3;
-        margin-bottom: 1.5em;
-        column-gap: 1em;
-
-        .metadata {
-            flex: 0 0 8%;
-        }
-
-        .body {
-            flex: 1 1 auto;
-        }
-
-        .thumbnail {
-            flex: 0 0 25%;
-
-            img {
-                max-height:120px;
-                object-fit: cover;
-                width: 100%;
-            }
-        }
-
-        .title {
-            font-weight: 500;
-            font-size: 1.3em;
-            margin-bottom: 0.2em;
-            line-height: 1.2;
-        }
-
-        .description {
-            font-weight: 300;
-            font-size: 1em;
-            margin-bottom: 0.3em;
-        }
-
-        .date {
-            font-weight: 300;
-            font-size: 0.85em;
-            margin-top: 0.3em;
-            text-align: right;
-        }
-
-        .post-categories {
-            display: flex;
-            flex-wrap: wrap;
-            row-gap: 0.4em;
-            column-gap: 0.4em;
-            margin: 0.5em 0;
-
-            .post-category {
-                color: $gray-600;
-                border: 1px solid $gray-500;
-                border-radius: 0.25rem;
-                text-transform: uppercase;
-                font-size: 0.65em;
-                padding: 0.15em 0.5em;
-                cursor: pointer;
-            }
-        }
-    }
-}
 
 #title-block-header.quarto-title-block.default .description, .title{
   color:$white;
@@ -186,20 +124,7 @@ pre.text, pre.sourceCode, .cell-output pre {
   padding: 0;
 }
 
-.blog-post {
-    .quarto-title .quarto-categories {
-        margin-top: 1.5em;
-        color: $white;
 
-        .quarto-category {
-            background-color: shift-color($purple, -25%);
-            border-color: shift-color($purple, -45%);
-            color: $white;
-            font-size: 0.65em;
-            opacity: 1;
-        }
-    }
-}
 
 #quarto-margin-sidebar {
     .quarto-listing-category-title {
@@ -221,7 +146,7 @@ pre.text, pre.sourceCode, .cell-output pre {
 
         .active {
             font-weight: 400;
-            color: $orange;
+            color: $primary;
         }
 
         .quarto-category-count {
@@ -249,7 +174,7 @@ pre.text, pre.sourceCode, .cell-output pre {
     //font-family: $footer-font-family;
 
     a {
-        color: $orange;
+        color: $primary;
     }
 
     .faux-block {
@@ -305,5 +230,5 @@ pre.text, pre.sourceCode, .cell-output pre {
 }
 
 #news p a{
-  color: $orange;
+  color: $primary;
 }
