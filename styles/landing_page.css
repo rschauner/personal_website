@@ -41,6 +41,10 @@ a {
     text-decoration: none;
 }
 
+p + ul {
+    margin-top: -15px;
+}
+
 .gradient_text {
     background: var(--gradient-text);
     background-clip: text;
