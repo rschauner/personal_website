@@ -21,8 +21,10 @@ website:
 
     # your sub-pages
     left:
-      - text: ""
+      - text: "Projects"
         href: pages/Projects/index.qmd
+      - text: Publications
+        href: pages/pubs/index.qmd
       - text: "CV"
         href: pages/cv/index.qmd
 
