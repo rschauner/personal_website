@@ -15,6 +15,15 @@ website:
     tracking-id: "G-JT9ZX1TNH2"
     storage: none
 
+  page-footer:
+    border: true
+    left: |
+      <span class="faux-block">{{< fa brands creative-commons title="Creative Commons" >}} 2023 Robert Schauner</span>
+      <span class="faux-block"><a href="https://github.com/rschauner/personal_website">{{< fa brands github title="GitHub" >}} Source Code</a></span>
+    right: |
+      <span class="faux-block"> Designed with {{< fa heart title="love" >}}</span>
+      <span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span>
+
   navbar:
     pinned: true
     background: navbar_bg

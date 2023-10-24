@@ -42,7 +42,8 @@ $light:     $gray-400 !default;
 $dark:      $black !default;
 
 $navbar_bg: $secondary !default;
-
+$footer-bg: $white !default;
+$footer-fg: $gray-500 !default;
 
 // Links
 $link-color: $tertiary !default;
@@ -169,7 +170,6 @@ pre.text, pre.sourceCode, .cell-output pre {
 .nav-footer {
     align-items: flex-start;  // Align all flex items to the top
     flex-wrap: wrap;
-    border: 0 !important;
     min-height: 3em;
     //font-family: $footer-font-family;
 
