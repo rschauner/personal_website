@@ -11,7 +11,9 @@ website:
   twitter-card: true
   open-graph: true
   search: false
-  google-analytics: "G-JT9ZX1TNH2"
+  google-analytics:
+    tracking-id: "G-JT9ZX1TNH2"
+    storage: none
 
   navbar:
     pinned: true
