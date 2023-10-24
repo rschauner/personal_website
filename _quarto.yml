@@ -11,6 +11,7 @@ website:
   twitter-card: true
   open-graph: true
   search: false
+  google-analytics: "G-JT9ZX1TNH2"
 
   navbar:
     pinned: true
