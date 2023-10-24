@@ -8,7 +8,14 @@ execute:
 
 website:
   title: "Robert Schauner"
-  twitter-card: true
+  description: "Data Scientist | Immunologist"
+  site-url: https://www.schauner.com
+
+  favicon: assets/icon.png
+
+  twitter-card:
+    creator: "@RobertSchauner"
+
   open-graph: true
   search: false
   google-analytics:
@@ -27,6 +34,7 @@ website:
   navbar:
     pinned: true
     background: navbar_bg
+    logo: assets/icon.png
 
     # your sub-pages
     left:
