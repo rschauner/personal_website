@@ -6,16 +6,15 @@ jupyter: python3
 keep-md: true
 ---
 
-
 ```{python}
 import yaml
 from IPython.display import display, Markdown, HTML
 
 def readable_list(_s):
-  if len(_s) < 3:
-    return ' and '.join(map(str, _s))
-  *a, b = _s
-  return f"{', '.join(map(str, a))}, and {b}"
+    if len(_s) < 3:
+        return " and ".join(map(str, _s))
+    *a, b = _s
+    return f"{', '.join(map(str, a))}, and {b}"
 
 def button(url, str, icon):
     icon_base = icon[:2]
@@ -26,45 +25,59 @@ def button(url, str, icon):
 
 yaml_data = yaml.safe_load(open("../../assets/pubs.yml"))
 
-pub_strs = {"pubs": {}, "wps": {}}
+def format_manuscript(d):
+    formatted_dict = dict.fromkeys(["title", "authors", "year", "venue", "published_url", "github_url","preprint_url", "buttons"])
+    formatted_dict["title"] = d["title"]
+    formatted_dict["year"] = d["year"]
+    formatted_dict["venue"] = d["venue"]
 
-for _, data in yaml_data.items():
-    title_str = data["title"]
-    authors = data.get("authors", ["me"])
-    authors = [aut if aut != "me" else "<strong>Robert Schauner</strong>" for aut in authors]
-    author_str = readable_list(authors)
-    year_str = data["year"]
+    authors = [aut if aut != "me" else "<strong>Robert Schauner</strong>" for aut in d.get("authors", ["me"])]
+    formatted_dict["authors"] = readable_list(authors)
 
+    for key in formatted_dict.keys():
+        if key not in d:
+            d[key] = None
+
+    formatted_dict["published_url"] = d["published_url"]
+    formatted_dict["github_url"] = d["github_url"]
+    formatted_dict["preprint_url"] = d["preprint_url"]
+    return formatted_dict
+
+def create_buttons(d):
     buttons = []
-    preprint = data.get("preprint")
-    if preprint is not None:
-        buttons.append(button(preprint, "Preprint", "bi-file-earmark-pdf"))
+    if d["preprint_url"] is not None:
+        buttons.append(button(d["preprint_url"], "Preprint", "bi-file-earmark-pdf"))
 
-    github = data.get("github")
-    if github is not None:
-        buttons.append(button(github, "Github", "bi-github"))
+    if d["github_url"] is not None:
+            buttons.append(button(d["github_url"], "Github", "bi-github"))
 
-    pub_url = data.get("published_url")
-    venue = data.get("venue")
-    working_paper = pub_url is None
+    if d["published_url"] is not None:
+        buttons.append(button(d["published_url"], "Published", "ai-archive"))
 
-    pub_str = f'{author_str}. ({year_str}) <font color="#C33C54">"{title_str}."</font>'
-    if venue is not None:
-        pub_str += f" <em>{venue}</em>"
+    d["buttons"] = buttons
+    return d
 
-    if working_paper:
-        if year_str not in pub_strs["wps"]:
-            pub_strs["wps"][year_str] = []
-        pub_strs["wps"][year_str].append(
-            "<li class='list-group-item'>" + pub_str + "<br>" + " ".join(buttons) + "</li>"
-        )
+def format_to_html(d):
+    citation = f'{d["authors"]}. ({d["year"]}) <font color="#C33C54">"{d["title"]}."</font>'
+    d["html"] = "<li class='list-group-item'>" + citation + "<br>" + " ".join(d["buttons"]) + "</li>"
+    return d
+
+def dict_to_html(d):
+    d = format_manuscript(d)
+    d = create_buttons(d)
+    return format_to_html(d)
+
+pubs = {"pubs": {}, "preprint": []}
+
+all_pubs = [dict_to_html(x) for x in yaml_data["manuscripts"]]
+
+for x in all_pubs:
+    if x["published_url"] is None:
+        pubs["preprint"].append(x["html"])
     else:
-        if year_str not in pub_strs["pubs"]:
-            pub_strs["pubs"][year_str] = []
-        buttons.append(button(pub_url, "Published", "ai-archive"))
-        pub_strs["pubs"][year_str].append(
-            "<li class='list-group-item'>" + pub_str + "<br>" + " ".join(buttons) + "</li>"
-        )
+        if x["year"] not in pubs["pubs"]:
+            pubs["pubs"][x["year"]] = []
+        pubs["pubs"][x["year"]].append(x["html"])
 ```
 
 
@@ -73,9 +86,21 @@ for _, data in yaml_data.items():
 #| label: "published-year"
 #| id: "published-year"
 #| output: asis
-for year in sorted(pub_strs["pubs"].keys(), reverse=True):
+for year in sorted(pubs["pubs"].keys(), reverse=True):
     display(Markdown(f"### {year}" + "{#" + f"published-{year}" + "}"))
     display(HTML(
-        "<ul class='list-group list-group-flush'>" + '\n'.join(pub_strs["pubs"][year]) + "</ul>"
+        "<ul class='list-group list-group-flush'>" + '\n'.join(pubs["pubs"][year]) + "</ul>"
     ))
+```
+
+```{python}
+#| label: "preprint"
+#| id: "preprint"
+#| output: asis
+if len(pubs["preprint"]) > 0:
+    display(Markdown("### Preprints {#preprint}"))
+    display(HTML(
+        "<ul class='list-group list-group-flush'>" + '\n'.join(pubs["preprint"]) + "</ul>"
+    ))
+
 ```
