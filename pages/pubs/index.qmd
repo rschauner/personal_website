@@ -52,13 +52,13 @@ def create_buttons(d):
             buttons.append(button(d["github_url"], "Github", "bi-github"))
 
     if d["published_url"] is not None:
-        buttons.append(button(d["published_url"], "Published", "ai-archive"))
+        buttons.append(button(d["published_url"], d["venue"], "bi-journal-richtext"))
 
     d["buttons"] = buttons
     return d
 
 def format_to_html(d):
-    citation = f'{d["authors"]}. ({d["year"]}) <font color="#C33C54">"{d["title"]}."</font>'
+    citation = f'<font color="#C33C54">"{d["title"]}."</font><br>{d["authors"]}'
     d["html"] = "<li class='list-group-item'>" + citation + "<br>" + " ".join(d["buttons"]) + "</li>"
     return d
 
