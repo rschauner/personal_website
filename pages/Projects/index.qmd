@@ -8,28 +8,47 @@ engine: knitr
 
 ## *O*-GlcNAcylation in AML
 
-[//]: # (TODO: Fix Broken Link and Image)
+[//]: # (TODO: Add Image)
 [//]: # (<img src="project_1_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open&#40;'https://arxiv.org/abs/2210.07278', 'blank'&#41;;"/>)
 
-<a href="https://github.com/rschauner/2022-frontiers-immunology-aml-hbp" target="_blank">Code on GitHub</a><br>
-
 A project focused on implicating the Hexoseamine Biosynthetic Pathway and *O*-GlcNAcylation in AML.
+We collected a large amount of publicly available data from NCI, St. Jude Children's Research Hospital, and the NIH GEO
+to investigate expression of Hexoseamine Biosynthetic Pathway members across AML patient samples and healthy controls.
 
-*Publication Pending*
+```{=html}
+<a class="btn btn-outline-dark btn-sm", href="https://github.com/rschauner/2022-frontiers-immunology-aml-hbp" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-github" role="img" aria-label="Code on GitHub"></i>
+    Code on GitHub
+</a><em> Publication Pending</em>
+```
 
+
+## Pediatric AML Survival Prediction
+
+We wanted to find an approach to predict pediatric FLT3-ITD AML survival.
+
+```{=html}
+<a class="btn btn-outline-dark btn-sm", href="https://aacrjournals.org/cancerres/article/82/12_Supplement/4080/702020/Abstract-4080-New-platform-for-novel-biomarker" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-file-earmark-easel" role="img" aria-label="AACR 2022 Abstract"></i>
+    AACR 2022 Abstract
+</a>
+```
 ----
 
 ## Sorting Students into Random Groups
-
-<a href="https://github.com/rschauner/student-pairs" target="_blank">Code on GitHub</a><br>
 
 A simple project to make a CLI and GUI to sort students into groups using Rust.
 The purpose was:
 
 - I wanted for someone to be able to run this without having R or Python installed,
 
-- I wanted to learn a little bit of a compiled language, and
+- Learn a little bit of a compiled language, and
 
 - My fianceé had a use for such a utility.
 
-
+```{=html}
+<a class="btn btn-outline-dark btn-sm", href="https://github.com/rschauner/student-pairs" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-github" role='img' aria-label='Code on GitHub'></i>
+    Code on GitHub
+</a>
+```
