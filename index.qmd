@@ -22,7 +22,7 @@ format:
             <h1>Hi, I'm <span class="gradient_text">Robert</span>.</h1>
             <p>I am a Data Scientist with a passion for Immunology.
                 I am currently a PhD candidate at Case Western Reserve University in Pathology.
-                Please explore my CV, my Projects (scientific and personal), or just drop me a line.
+                Please explore my CV, my Projects (scientific and personal), or just drop me a line <a href="mailto:robert@schauner.com"><i class="fa fa-envelope"></i></a>.
             </p>
             <p><b>Skills:</b></p>
             <ul>
