@@ -3,7 +3,6 @@ title: "Publications"
 echo: false
 section-divs: false
 jupyter: python3
-keep-md: true
 ---
 
 ```{python}
@@ -102,5 +101,4 @@ if len(pubs["preprint"]) > 0:
     display(HTML(
         "<ul class='list-group list-group-flush'>" + '\n'.join(pubs["preprint"]) + "</ul>"
     ))
-
 ```

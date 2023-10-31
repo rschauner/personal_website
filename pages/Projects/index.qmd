@@ -8,9 +8,6 @@ engine: knitr
 
 ## *O*-GlcNAcylation in AML
 
-[//]: # (TODO: Add Image)
-[//]: # (<img src="project_1_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open&#40;'https://arxiv.org/abs/2210.07278', 'blank'&#41;;"/>)
-
 A project focused on implicating the Hexoseamine Biosynthetic Pathway and *O*-GlcNAcylation in AML.
 We collected a large amount of publicly available data from NCI, St. Jude Children's Research Hospital, and the NIH GEO
 to investigate expression of Hexoseamine Biosynthetic Pathway members across AML patient samples and healthy controls.
@@ -21,7 +18,6 @@ to investigate expression of Hexoseamine Biosynthetic Pathway members across AML
     Code on GitHub
 </a><em> Publication Pending</em>
 ```
-
 
 ## Pediatric AML Survival Prediction
 
