@@ -1,23 +1,21 @@
 on:
   workflow_dispatch:
   push:
-    branches: actions
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 name: Quarto Publish
 
 jobs:
   build-deploy:
+    name: Render
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
-      - uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -27,19 +25,19 @@ jobs:
         with:
           r-version: '4.3.1'
 
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 1
-
-      - name: Install Python and Dependencies
+      - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.9"
           cache: "pip"
 
-      - run: pip install jupyter
-      - run: pip install -r requirements.txt
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
+
+      - name: Install Python Dependencies
+        run: pip install -r requirements.txt
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
