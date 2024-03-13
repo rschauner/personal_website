@@ -88,3 +88,14 @@ manuscripts:
     year: 2023
     venue: Frontiers in Immunology
     published_url: https://doi.org/10.3389/fimmu.2023.1022890
+  - title: Single Cell and Bulk RNA Expression Analyses Identifies Enhanced Hexosamine Biosynthetic Pathway and O-GlcNAcylation in Acute Myeloid Leukemia blasts and stem cells
+    authors:
+      - me
+      - Jordan Cress
+      - Changjin Hong
+      - David Wald
+      - Parameswaran Ramakrishnan
+    year: 2024
+    venue: Frontiers in Immunology
+    published_url: https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1327405
+    github_url: https://github.com/rschauner/2024-frontiers-immunology-aml-hbp
