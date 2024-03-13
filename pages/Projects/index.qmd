@@ -13,10 +13,14 @@ We collected a large amount of publicly available data from NCI, St. Jude Childr
 to investigate expression of Hexoseamine Biosynthetic Pathway members across AML patient samples and healthy controls.
 
 ```{=html}
-<a class="btn btn-outline-dark btn-sm", href="https://github.com/rschauner/2022-frontiers-immunology-aml-hbp" target="_blank" rel="noopener noreferrer">
+<a class="btn btn-outline-dark btn-sm", href="https://github.com/rschauner/2024-frontiers-immunology-aml-hbp" target="_blank" rel="noopener noreferrer">
     <i class="bi bi-github" role="img" aria-label="Code on GitHub"></i>
     Code on GitHub
-</a><em> Publication Pending</em>
+</a>
+<a class="btn btn-outline-dark btn-sm", href="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1327405" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-journal-richtext" role="img" aria-label="Publication"></i>
+    Publication
+</a>
 ```
 
 ## Pediatric AML Survival Prediction
