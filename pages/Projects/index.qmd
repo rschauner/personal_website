@@ -26,6 +26,9 @@ to investigate expression of Hexoseamine Biosynthetic Pathway members across AML
 ## Pediatric AML Survival Prediction
 
 We wanted to find an approach to predict pediatric FLT3-ITD AML survival.
+We used CIBERSORTx as a feature extractor for bulk RNA sequencing data
+using a custom reference generated from single-cell RNA sequencing data generated in the lab.
+We found this increased prediction accuracy.
 
 ```{=html}
 <a class="btn btn-outline-dark btn-sm", href="https://aacrjournals.org/cancerres/article/82/12_Supplement/4080/702020/Abstract-4080-New-platform-for-novel-biomarker" target="_blank" rel="noopener noreferrer">

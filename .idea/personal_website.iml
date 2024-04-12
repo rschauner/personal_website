@@ -5,6 +5,8 @@
       <excludeFolder url="file://$MODULE_DIR$/.quarto/" />
       <excludeFolder url="file://$MODULE_DIR$/_site/" />
       <excludeFolder url="file://$MODULE_DIR$/site_libs/" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/_freeze" />
     </content>
     <orderEntry type="jdk" jdkName="personal_website" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
