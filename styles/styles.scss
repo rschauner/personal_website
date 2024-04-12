@@ -41,9 +41,10 @@ $danger:    $red !default;
 $light:     $gray-400 !default;
 $dark:      $black !default;
 
+// Navbar
 $navbar_bg: $secondary !default;
-$footer-bg: $white !default;
-$footer-fg: $gray-500 !default;
+$navbar-hl: $primary !default;
+$navbar-fg: $tertiary !default;
 
 // Links
 $link-color: $tertiary !default;
@@ -52,8 +53,8 @@ $link-hover-color: $primary !default;
 $link-hover-decoration: underline !default;
 
 // Footer
-$footer-bg: $gray-900 !default;
-$footer-fg: $gray-300 !default;
+$footer-bg: $white !default;
+$footer-fg: $gray-500 !default;
 
 // Inline code
 $code-bg: $gray-200 !default;
@@ -97,10 +98,10 @@ pre.text, pre.sourceCode, .cell-output pre {
 
 .navbar-dark .navbar-nav .nav-link {
   z-index:0;
-  color: $tertiary;
+  color: $tertiary !important;
 }
 
-.navbar-dark:hover .navbar-nav:hover .nav-link:hover{
+.navbar-dark:hover .navbar-nav:hover .nav-link:hover {
   z-index: 0;
   color: $emphasis;
 }
