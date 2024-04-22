@@ -99,3 +99,12 @@ manuscripts:
     venue: Frontiers in Immunology
     published_url: https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1327405
     github_url: https://github.com/rschauner/2024-frontiers-immunology-aml-hbp
+  - title: "O-GlcNAcylation and Response Prediction in Acute Myeloid Leukemia: A Data-Driven Approach"
+    authors:
+      - me
+    year: 2024
+    venue: OhioLINK
+    files:
+      Supplemental Table 6: "https://user.fm/files/v2-217605da1cd0a1de364f06d022cf4d13/library_seq_st8.xlsx"
+      Supplemental Table 7: "https://user.fm/files/v2-c72b0e377b64217a146efe23031ed80e/cibsersort_stem_st9.txt"
+      Supplemental Table 8: "https://user.fm/files/v2-9f64f7f66f7c848ebcf5736f301ef702/cibsersort_nonstem_st10.txt"

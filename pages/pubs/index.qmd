@@ -17,26 +17,56 @@ def readable_list(_s):
 
 def button(url, str, icon):
     icon_base = icon[:2]
-    return f"""<a class="btn btn-outline-dark btn-sm", href="{url}" target="_blank" rel="noopener noreferrer">
-        <i class="{icon_base} {icon}" role='img' aria-label='{str}'></i>
-        {str}
-    </a>"""
+    return f"""
+        <a class="btn btn-outline-dark btn-sm"
+            href="{url}"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="{icon_base} {icon}"
+                role="img"
+                aria-label="{str}">
+            </i>
+            {str}
+        </a>
+    """
+
+def download_button(path, str):
+    return f"""
+        <a class="btn btn-outline-dark btn-sm"
+            href="{path}" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-solid fa-file-arrow-down"
+                role="img"
+                aria-label="{str}">
+            </i>
+            {str}
+        </a>
+    """
 
 yaml_data = yaml.safe_load(open("../../assets/pubs.yml"))
 
 def format_manuscript(d):
-    formatted_dict = dict.fromkeys(["title", "authors", "year", "venue", "published_url", "github_url","preprint_url", "buttons"])
+    formatted_dict = dict.fromkeys([
+        "title", "authors", "year",
+        "venue", "published_url",
+        "github_url", "preprint_url",
+        "buttons", "files"])
+
     formatted_dict["title"] = d["title"]
     formatted_dict["year"] = d["year"]
     formatted_dict["venue"] = d["venue"]
 
-    authors = [aut if aut != "me" else "<strong>Robert Schauner</strong>" for aut in d.get("authors", ["me"])]
+    authors = [aut if aut != "me" else
+               "<strong>Robert Schauner</strong>" for
+               aut in d.get("authors", ["me"])]
+
     formatted_dict["authors"] = readable_list(authors)
 
     for key in formatted_dict.keys():
         if key not in d:
             d[key] = None
 
+    formatted_dict["files"] = dict(d["files"]) if d["files"] else None
     formatted_dict["published_url"] = d["published_url"]
     formatted_dict["github_url"] = d["github_url"]
     formatted_dict["preprint_url"] = d["preprint_url"]
@@ -48,17 +78,22 @@ def create_buttons(d):
         buttons.append(button(d["preprint_url"], "Preprint", "bi-file-earmark-pdf"))
 
     if d["github_url"] is not None:
-            buttons.append(button(d["github_url"], "Github", "bi-github"))
+        buttons.append(button(d["github_url"], "Github", "bi-github"))
 
     if d["published_url"] is not None:
         buttons.append(button(d["published_url"], d["venue"], "bi-journal-richtext"))
+
+    if d["files"] is not None:
+        for key, value in d["files"].items():
+            buttons.append(download_button(value, key))
 
     d["buttons"] = buttons
     return d
 
 def format_to_html(d):
     citation = f'<font color="#C33C54">"{d["title"]}."</font><br>{d["authors"]}'
-    d["html"] = "<li class='list-group-item'>" + citation + "<br>" + " ".join(d["buttons"]) + "</li>"
+    d["html"] = ("<li class='list-group-item'>" + citation +
+                 "<br>" + " ".join(d["buttons"]) + "</li>")
     return d
 
 def dict_to_html(d):
@@ -79,6 +114,16 @@ for x in all_pubs:
         pubs["pubs"][x["year"]].append(x["html"])
 ```
 
+```{python}
+#| label: "preprint"
+#| id: "preprint"
+#| output: asis
+if len(pubs["preprint"]) > 0:
+    display(Markdown("### Preprints {#preprint}"))
+    display(HTML(
+        "<ul class='list-group list-group-flush'>" + '\n'.join(pubs["preprint"]) + "</ul>"
+    ))
+```
 
 
 ```{python}
@@ -89,16 +134,5 @@ for year in sorted(pubs["pubs"].keys(), reverse=True):
     display(Markdown(f"### {year}" + "{#" + f"published-{year}" + "}"))
     display(HTML(
         "<ul class='list-group list-group-flush'>" + '\n'.join(pubs["pubs"][year]) + "</ul>"
-    ))
-```
-
-```{python}
-#| label: "preprint"
-#| id: "preprint"
-#| output: asis
-if len(pubs["preprint"]) > 0:
-    display(Markdown("### Preprints {#preprint}"))
-    display(HTML(
-        "<ul class='list-group list-group-flush'>" + '\n'.join(pubs["preprint"]) + "</ul>"
     ))
 ```
