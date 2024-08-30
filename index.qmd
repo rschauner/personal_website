@@ -21,12 +21,15 @@ format:
         <div class="hero_content">
             <h1>Hi, I'm <span class="gradient_text">Robert</span>.</h1>
             <p>I am a Data Scientist with a passion for Immunology.
-                I am currently a PhD candidate at Case Western Reserve University in Pathology.
-                Please explore my CV, my Projects (scientific and personal), or just drop me a line <a href="mailto:website@robert.schauner.com"><i class="fa fa-envelope"></i></a>.
+                I am currently a Postdoctoral Fellow at Case Western Reserve University in Infectious Diseases with
+                <a href="https://case.edu/medicine/carpenter-lab/"> Dr. Stephen Carpenter</a>.
+                I recieved my PhD in Immunology from Case Western Reserve University in 2024.
+                Please explore my CV, my Projects (scientific and personal), or just drop me a line
+                <a href="mailto:website@robert.schauner.com"><i class="fa fa-envelope"></i></a>.
             </p>
             <p><b>Skills:</b></p>
             <ul>
-              <li>RNA-sequencing analysis</li>
+              <li>(single-cell and bulk) RNA-sequencing analysis</li>
               <li>Flow Cytometry</li>
               <li>R</li>
               <li>Python</li>

@@ -57,7 +57,7 @@ website:
         href: https://orcid.org/0000-0002-6336-7331
       - icon: envelope
         aria-label: email
-        href: "mailto:robert@schauner.com"
+        href: "mailto:website@robert.schauner.com"
 
 format:
   html:
@@ -66,3 +66,4 @@ format:
      - styles/styles.scss
 
     toc: false
+    email-obfuscation: javascript
