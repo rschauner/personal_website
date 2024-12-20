@@ -1,44 +1,222 @@
 ---
 layout: page
-title: Curriculum vitae
+title: curriculum vitae
 excerpt: My current CV
-engine: knitr
+jupyter: python3
+echo: false
+css: "../../styles/cv.css"
+format:
+    html:
+        toc: true
+    pdf:
+        author: Robert Schauner
+        pdf-engine: weasyprint
 cv:
     pdf: "/assets/cv.pdf"
 ---
 
-```{css echo=FALSE}
-.embed-container {
-    position: relative;
-    padding-bottom: 129%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+
+```{python}
+import yaml
+from IPython.display import display, Markdown
+from setuptools.command.build_ext import if_dl
+
+def readable_list(_s):
+    if len(_s) < 3:
+        return " and ".join(map(str, _s))
+    *a, b = _s
+    return f"{', '.join(map(str, a))}, and {b}"
+
+
+yaml_data = yaml.safe_load(open("../../assets/pubs.yml"))
+
+def format_manuscript(d):
+    formatted_dict = dict.fromkeys([
+        "title", "authors", "year",
+        "venue", "published_url",
+        "github_url", "preprint_url",
+        "buttons", "files"])
+
+    formatted_dict["title"] = d["title"]
+    formatted_dict["year"] = d["year"]
+    formatted_dict["venue"] = d["venue"]
+
+    authors = [aut if aut != "me" else
+               "[Robert Schauner]{.author-me}" for
+               aut in d.get("authors", ["me"])]
+
+    authors = readable_list(authors)
+
+    formatted_dict["authors"] = f"[{authors}]{{.author-list}}"
+
+    for key in formatted_dict.keys():
+        if key not in d:
+            d[key] = None
+
+    formatted_dict["files"] = dict(d["files"]) if d["files"] else None
+    formatted_dict["published_url"] = d["published_url"]
+    formatted_dict["github_url"] = d["github_url"]
+    formatted_dict["preprint_url"] = d["preprint_url"]
+    return formatted_dict
+
+
+def create_buttons(d):
+    d["buttons"] = []
+    return d
+
+
+def format_to_html(d):
+    citation = f'[{d["title"]}]{{.paper-title}}--[{d["venue"]} {d["year"]}]{{.paper-venue}}<br>{d["authors"]}'
+    d["html"] = "<li class='list-group-item'>" + citation + "</li>"
+    return d
+
+
+def dict_to_html(d):
+    d = format_manuscript(d)
+    d = create_buttons(d)
+    return format_to_html(d)
+
+
+pubs = {"pubs": {}, "preprint": []}
+
+all_pubs = [dict_to_html(x) for x in yaml_data["manuscripts"] if x["venue"] != "OhioLINK"]
+
+for x in all_pubs:
+    if x["published_url"] is None:
+        pubs["preprint"].append(x["html"])
+    else:
+        if x["year"] not in pubs["pubs"]:
+            pubs["pubs"][x["year"]] = []
+        pubs["pubs"][x["year"]].append(x["html"])
 ```
 
-```{=html}
-<div class="embed-container">
-  <iframe src="`r rmarkdown::metadata$cv$pdf`#toolbar=0" style="border: 0.5px; width: 100%"></iframe>
-</div>
-```
+### Education
 
-::: {.column-margin}
+**Bachelor of Arts** [*May 2018*]{.cv-date}
+<br> Department of Biology--*Coe College*
 
-```{=html}
-<p class="text-center">
-  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
-    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download CV
-  </a>
-</p>
-```
+**Doctor of Philosophy** [*August 2024*]{.cv-date}
+<br> Department of Pathology--*Case Western Reserve University* <br>
+[Dissertation Title:]{.medium-weight} O-GlcNAcylation and Response Prediction in Acute Myeloid Leukemia: A Data-Driven Approach<br>
+Mentors: Dr. David Wald and Dr. Tae Hyun Hwang
+
+### Research Experience
+
+**Higher Education Research Experience Fellow** [*August 2017-December 2017*]{.cv-date}
+<br> Molecular and Cellular Imaging Group--*Oak Ridge National Lab, Oak Ridge, TN*
+
+**Postdoctoral Scholar** [*August 2024-current*]{.cv-date}
+<br> Infectious Diseases--*Case Western Reserve University, Cleveland, OH*<br>
+
+### Awards
+
+Minority Scholar in Cancer Research Awardee [*AACR Annual Meeting 2022*]{.cv-date}
+
+### Publications
+
+::: {.html-only}
+
+For a list of publications see [Publications](/pages/pubs/index.qmd)
+
 :::
+
+::: {.pdf-only}
+
+```{python}
+#| output: asis
+for year in sorted(pubs["pubs"].keys(), reverse=True):
+    display(Markdown('\n\n'.join(pubs["pubs"][year])))
+```
+
+:::
+
+### Presentations
+
+**Transcriptional State Evolution in Pediatric Acute Myeloid Leukemia** [*2020*]{.cv-date}
+<br> *Biomedical Graduate Student Symposium*
+
+**Discovering Biomarkers for Pediatric Acute Myeloid Leukemia using single-cell RNA sequencing** [*2021*]{.cv-date}
+<br> *ISMB/ECCB Annual Meeting*
+
+**New platform for novel biomarker discovery using single-cell RNA sequencing on pediatric acute myeloid leukemia samples** [*2022*]{.cv-date}
+<br> *AACR Annual Meeting*
+
+**Development of a Platform for Biomarker Discovery using scRNA sequencing on Pediatric AML Samples** [*2022*]{.cv-date}
+<br> *St. Jude Children’s Hospital Future Fellows Research Conference, Memphis, TN*
+
+**Enhanced Hexosamine Biosynthetic Pathway and O-GlcNAcylation in Acute Myeloid Leukemia: A Data-Driven Approach** [*2024*]{.cv-date}
+<br> *Immunology Retreat, Case Western Reserve University*
+
+
+### Skills
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+#### Computer Skills
+Languages: R, Python
+
+Linux, Mac, HPC
+
+Seurat, tidyverse
+
+git, SLURM
+
+Snakemake, scverse
+
+Affinity Creative Suite
+
+:::
+
+::: {.column width="33%"}
+
+#### Analysis Skills
+Single-cell RNA seq
+
+  - Feature Barcoding
+  - Immune Repertoire
+
+RNA seq
+
+*In silico* flow cytometry
+
+FlowJo
+
+:::
+
+::: {.column width="33%"}
+
+#### Laboratory Techniques
+High-parameter Flow Cytometry
+
+10x Genomics Library Preparation
+
+Primary Cell Culture
+
+DNA/RNA extraction
+
+BSL-3 and BSL-2+ practices
+
+:::
+
+::::
+
+### Voulenteer/Non-profit work
+
+**Director of Media and Public Relations** [*2020-2023*]{.cv-date}
+<br> *Rise Up: Northeast Ohio, Cleveland, OH*
+
+**Scientific Officer** [*2020-current*]{.cv-date}
+<br> *Rise Up: Northeast Ohio, Cleveland, OH*
+
+### Memberships
+
+**American Association of Immunologists** [*2020-current*]{.cv-date}
+
+**American Association for Cancer Research** [*2022-current*]{.cv-date}
+
+**International Society for Computational Biology** [*2021-current*]{.cv-date}
+
+
+

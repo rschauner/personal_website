@@ -1,0 +1,119 @@
+/* import fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+/* all formats */
+
+li.list-group-item {
+    list-style-type: none;
+}
+
+.paper-title {
+    color: #C33C54;
+}
+
+.paper-venue {
+    font-style: italic;
+}
+
+table {
+    border-top: 0 solid white !important;
+    border-bottom: 0 solid white !important;
+}
+
+p:has(+ul) {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+p + ul {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    li {
+        padding-top: 0 !important;
+    }
+}
+
+
+table td + td {
+    border-left: 1px solid #B1BAC1 !important;
+}
+
+th {
+    text-align: center;
+}
+
+.author-list {
+    font-size: smaller;
+    display: flow;
+    margin-bottom: 1%;
+}
+
+.author-me {
+    font-weight: bold;
+}
+
+.medium-weight {
+    font-weight: 500;
+}
+
+.cv-date {
+    float: right;
+    font-style: italic
+}
+
+.pdf-only {
+    display: none;
+}
+
+
+
+
+
+/* adapt stylesheet for print
+from: https://github.com/quarto-dev/quarto-cli/discussions/2538#discussioncomment-4081842 */
+
+/* for page-breaks use style spans
+  page-break-before: always;
+  page-break-after: always;
+*/
+
+@media print {
+    @page {
+        size: a4 portrait;
+        counter-increment: page;
+    }
+    html {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 80% !important;
+    }
+    .html-only {
+        display: none;
+    }
+    .pdf-only {
+        display: block;
+    }
+
+    .paper-title {
+        color: #000000;
+    }
+
+    .contact-block {
+        margin-top: 0%;
+        text-align: center;
+    }
+
+    header {
+        margin-block-end: 5em;
+    }
+    header h1.title {
+        display: none;
+    }
+    header .author {
+        font-size: 2em;
+        font-weight: 900;
+        color: black;
+        text-align: center;
+        margin-block-end: 0em;
+        margin-bottom: 0;
+        text-transform: capitalize;
+    }
+}
