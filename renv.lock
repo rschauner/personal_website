@@ -313,14 +313,16 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.40",
+      "Version": "0.50",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
+        "R",
+        "grDevices",
         "stats",
         "tools"
       ],
-      "Hash": "be07d23211245fc7d4209f54c4e4ffc8"
+      "Hash": "44ab88837d3f8dfc66a837299b887fa6"
     },
     "yaml": {
       "Package": "yaml",
