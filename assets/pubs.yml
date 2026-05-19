@@ -109,3 +109,19 @@ manuscripts:
       Supplemental Table 6: "https://user.fm/files/v2-217605da1cd0a1de364f06d022cf4d13/library_seq_st8.xlsx"
       Supplemental Table 7: "https://user.fm/files/v2-c72b0e377b64217a146efe23031ed80e/cibsersort_stem_st9.txt"
       Supplemental Table 8: "https://user.fm/files/v2-9f64f7f66f7c848ebcf5736f301ef702/cibsersort_nonstem_st10.txt"
+  - title: Human CD4+ T cells recognize Mycobacterium tuberculosis–infected macrophages amid broader responses
+    authors:
+      - Volodymyr Stetsenko 
+      - Daniel P. Gail 
+      - Scott M. Reba 
+      - Vinicius G. Suzart 
+      - me
+      - Avinaash K. Sandhu 
+      - Alessandro Sette 
+      - Mohammad Haj Dezfulian 
+      - Cecilia S. Lindestam Arlehamn 
+      - Stephen M. Carpenter
+    year: 2025
+    venue: Journal of Experimental Medicine
+    published_url: https://doi.org/10.1084/jem.20250460
+    github_url: https://github.com/carpenter-lab/StetsenkoGail2025
