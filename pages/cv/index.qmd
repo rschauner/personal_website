@@ -133,7 +133,7 @@ for year in sorted(pubs["pubs"].keys(), reverse=True):
 ### Presentations
 
 **Transcriptional State Evolution in Pediatric Acute Myeloid Leukemia** [*2020*]{.cv-date}
-<br> *Biomedical Graduate Student Symposium*
+<br> *Biomedical Graduate Student Symposium, Case Western Reserve University*
 
 **Discovering Biomarkers for Pediatric Acute Myeloid Leukemia using single-cell RNA sequencing** [*2021*]{.cv-date}
 <br> *ISMB/ECCB Annual Meeting*
@@ -147,6 +147,8 @@ for year in sorted(pubs["pubs"].keys(), reverse=True):
 **Enhanced Hexosamine Biosynthetic Pathway and O-GlcNAcylation in Acute Myeloid Leukemia: A Data-Driven Approach** [*2024*]{.cv-date}
 <br> *Immunology Retreat, Case Western Reserve University*
 
+**Assessing Protective and Failed Immunity to Mycobacterium tuberculosis in Uganda: A Data-driven Study in Memory T Cells** [*2026*]{.cv-date}
+<br> *Midwest Mycobacterium Meeting, Washington University in St. Louis*
 
 ### Skills
 
